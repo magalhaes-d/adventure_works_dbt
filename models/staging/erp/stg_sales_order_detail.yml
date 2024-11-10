@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: stg_sales_order_detail
+    description: Table with detailed information about sales order items.
+    columns:
+      - name: sales_order_detail_pk
+        description: Unique identifier for the sales order detail.
+
+      - name: sales_order_fk
+        description: Foreign key referencing the sales order.
+
+      - name: product_fk
+        description: Foreign key referencing the product in the order.
+
+      - name: special_offer_fk
+        description: Foreign key referencing the special offer applied to the product.
+
+      - name: carrier_tracking_number
+        description: Tracking number provided by the carrier for the shipment.
+
+      - name: order_quantity
+        description: Quantity of the product ordered.
+
+      - name: unit_price
+        description: Price per unit of the product in the order.
+
+      - name: unit_price_discount
+        description: Discount applied to the unit price of the product.
+
+      - name: row_guid
+        description: Unique identifier for the row.
+
+      - name: modified_date
+        description: Date when the sales order detail information was last modified.

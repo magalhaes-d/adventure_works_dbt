@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_special_offers_product
+    description: Table with information linking special offers to products.
+    columns:
+      - name: special_offer_fk
+        description: Foreign key referencing the special offer.
+
+      - name: product_fk
+        description: Foreign key referencing the product.
+
+      - name: row_guid
+        description: Unique identifier for the row.
+
+      - name: modified_date
+        description: Date when the special offer and product information was last modified.

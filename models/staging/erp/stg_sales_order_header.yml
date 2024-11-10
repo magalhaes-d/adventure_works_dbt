@@ -1,0 +1,80 @@
+version: 2
+
+models:
+  - name: stg_sales_orders_header
+    description: Table with detailed information about sales orders.
+    columns:
+      - name: sales_order_pk
+        description: Unique identifier for the sales order.
+
+      - name: customer_fk
+        description: Foreign key referencing the customer.
+
+      - name: salesperson_fk
+        description: Foreign key referencing the salesperson.
+
+      - name: territory_fk
+        description: Foreign key referencing the territory.
+
+      - name: bill_to_address_fk
+        description: Foreign key referencing the billing address.
+
+      - name: ship_to_address_fk
+        description: Foreign key referencing the shipping address.
+
+      - name: ship_method_fk
+        description: Foreign key referencing the shipping method.
+
+      - name: credit_card_fk
+        description: Foreign key referencing the credit card used for payment.
+
+      - name: currency_rate_fk
+        description: Foreign key referencing the currency rate.
+
+      - name: revision_number
+        description: Revision number of the order.
+
+      - name: order_date
+        description: Date when the order was placed.
+
+      - name: due_date
+        description: Date when the order is due.
+
+      - name: ship_date
+        description: Date when the order was shipped.
+
+      - name: order_status
+        description: Status of the sales order.
+
+      - name: online_order_flag
+        description: Flag indicating whether the order was placed online.
+
+      - name: purchase_order_number
+        description: Purchase order number associated with the sales order.
+
+      - name: account_number
+        description: Account number of the customer.
+
+      - name: credit_card_approval_code
+        description: Approval code for the credit card transaction.
+
+      - name: subtotal
+        description: Subtotal amount of the order before taxes and shipping.
+
+      - name: tax_amount
+        description: Amount of tax applied to the order.
+
+      - name: freight
+        description: Shipping cost associated with the order.
+
+      - name: total_due
+        description: Total amount due for the order.
+
+      - name: comment
+        description: Additional comments about the order.
+
+      - name: row_guid
+        description: Unique identifier for the row.
+
+      - name: modified_date
+        description: Date when the sales order information was last modified.

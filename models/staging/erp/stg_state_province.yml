@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_state_province
+    description: Table with detailed information about state and province data.
+    columns:
+      - name: state_province_pk
+        description: Unique identifier for the state or province.
+
+      - name: country_region_fk
+        description: Foreign key referencing the country or region.
+
+      - name: territory_fk
+        description: Foreign key referencing the territory.
+
+      - name: state_province_code
+        description: Code for the state or province.
+
+      - name: is_only_state_province_flag
+        description: Flag indicating whether the state or province is the only one in the country or region.
+
+      - name: state_province_name
+        description: Name of the state or province.
+
+      - name: row_guid
+        description: Unique identifier for the row.
+
+      - name: modified_date
+        description: Date when the state or province information was last modified.

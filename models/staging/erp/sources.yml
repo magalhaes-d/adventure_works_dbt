@@ -1,0 +1,127 @@
+version: 2
+
+sources:
+  - name: adventure_works_erp
+    description: Adventures Work company database.
+    database: fea24_9  
+    schema: raw_adventure_works 
+    tables:
+      # Production schema
+      - name: product
+        description: Table with product data.
+        columns:
+          - name: productid
+            data_tests:
+              - unique
+              - not_null
+
+      # Person schema
+      - name: person
+        description: Table with person data.
+        columns:
+          - name: businessentityid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: businessentityaddress
+        description: Table with addres foreign keys.
+        columns:
+          - name: businessentityid
+            data_tests:
+              - not_null
+
+      - name: address
+        description: Table with addres data.
+        columns:
+          - name: addressid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: stateprovince
+        description: Table with state province data.
+        columns:
+          - name: stateprovinceid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: countryregion
+        description: Table with contry region data.
+        columns:
+          - name: countryregioncode
+            data_tests:
+              - unique
+              - not_null
+
+      # Sales schema
+      - name: salesorderheader
+        description: Table with sales order data.
+        columns:
+          - name: salesorderid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: salesorderdetail
+        description: Table with sales order details.
+        columns:
+          - name: salesorderdetailid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: specialofferproduct
+        description: Table with special offer data.
+        columns:
+          - name: specialofferid
+            data_tests:
+              - not_null
+
+      - name: specialoffer
+        description: Table with special offer data.
+        columns:
+          - name: specialofferid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: creditcard
+        description: Table with credit card data.
+        columns:
+          - name: creditcardid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: salesreason
+        description: Table with sales reason data.
+        columns:
+          - name: salesreasonid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: salesorderheadersalesreason
+        description: Table with sales reason data.
+        columns:
+          - name: salesreasonid
+            data_tests:
+              - not_null
+
+      - name: customer
+        description: Table with customer data.
+        columns:
+          - name: customerid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: store
+        description: Table with store data.
+        columns:
+          - name: businessentityid
+            data_tests:
+              - unique
+              - not_null

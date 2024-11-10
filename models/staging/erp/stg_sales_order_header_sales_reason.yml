@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: stg_sales_order_reasons
+    description: Table linking sales orders with sales reasons.
+    columns:
+      - name: sales_order_fk
+        description: Foreign key referencing the sales order.
+
+      - name: sales_reason_fk
+        description: Foreign key referencing the sales reason.
+
+      - name: modified_date
+        description: Date when the sales order reason information was last modified.
