@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: stg_person
+    description: Table with detailed information about persons.
+    columns:
+      - name: business_entity_pk
+        description: Unique identifier for the business entity.
+
+      - name: person_type
+        description: Type classification of the person.
+
+      - name: name_style
+        description: Indicates the style of the name (e.g., Western or Eastern).
+
+      - name: title
+        description: Title of the person (e.g., Mr., Ms., Dr.).
+
+      - name: first_name
+        description: First name of the person.
+
+      - name: middle_name
+        description: Middle name of the person.
+
+      - name: last_name
+        description: Last name of the person.
+
+      - name: suffix
+        description: Suffix of the person's name (e.g., Jr., Sr., III).
+
+      - name: email_promotion
+        description: Indicator for participation in email promotions.
+
+      - name: additional_contact_info
+        description: Additional contact information for the person.
+
+      - name: demographics
+        description: Demographic information related to the person.
+
+      - name: row_guid
+        description: Unique identifier for the row.
+
+      - name: modified_date
+        description: Date when the person's information was last modified.

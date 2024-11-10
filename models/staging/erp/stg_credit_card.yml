@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_credit_card
+    description: Table with detailed information about credit cards.
+    columns:
+      - name: credit_card_pk
+        description: Unique identifier for the credit card.
+
+      - name: card_type
+        description: Type of the credit card.
+
+      - name: card_number
+        description: Credit card number.
+
+      - name: exp_month
+        description: Expiration month of the credit card.
+
+      - name: exp_year
+        description: Expiration year of the credit card.
+
+      - name: modified_date
+        description: Date when the credit card information was last modified.

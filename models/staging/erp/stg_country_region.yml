@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: stg_country_region
+    description: Table with detailed information about countries.
+    columns:
+      - name: country_region_pk
+        description: Unique identifier for the country or region.
+
+      - name: country_name
+        description: Name of the country or region.
+
+      - name: modified_date
+        description: Date when the country or region information was last modified.

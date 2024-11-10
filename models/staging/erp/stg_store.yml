@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_store
+    description: Table with information about stores.
+    columns:
+      - name: business_entity_fk
+        description: Foreign key referencing the business entity associated with the store.
+
+      - name: store_name
+        description: Name of the store.
+
+      - name: salesperson_fk
+        description: Foreign key referencing the salesperson associated with the store.
+
+      - name: demographics
+        description: Demographic information related to the store.
+
+      - name: row_guid
+        description: Unique identifier for the row.
+
+      - name: modified_date
+        description: Date when the store information was last modified.

@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: stg_special_offer
+    description: Table with detailed information about special offers.
+    columns:
+      - name: special_offer_pk
+        description: Unique identifier for the special offer.
+
+      - name: offer_description
+        description: Description of the special offer.
+
+      - name: discount_pct
+        description: Discount percentage applied by the special offer.
+
+      - name: offer_type
+        description: Type of the special offer.
+
+      - name: offer_category
+        description: Category of the special offer.
+
+      - name: start_date
+        description: Start date of the special offer.
+
+      - name: end_date
+        description: End date of the special offer.
+
+      - name: min_qty
+        description: Minimum quantity required to avail the special offer.
+
+      - name: max_qty
+        description: Maximum quantity allowed for the special offer.
+
+      - name: row_guid
+        description: Unique identifier for the row.
+
+      - name: modified_date
+        description: Date when the special offer information was last modified.

@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_customer
+    description: Table with information about customers.
+    columns:
+      - name: customer_pk
+        description: Unique identifier for the customer.
+
+      - name: person_fk
+        description: Foreign key referencing the person associated with the customer.
+
+      - name: store_fk
+        description: Foreign key referencing the store associated with the customer.
+
+      - name: territory_fk
+        description: Foreign key referencing the territory associated with the customer.
+
+      - name: row_guid
+        description: Unique identifier for the row.
+
+      - name: modified_date
+        description: Date when the customer information was last modified.

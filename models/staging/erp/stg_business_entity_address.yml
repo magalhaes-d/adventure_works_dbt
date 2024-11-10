@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_business_entity_address
+    description: Table linking business entities to their addresses.
+    columns:
+      - name: business_entity_fk
+        description: Foreign key referencing the business entity.
+
+      - name: address_fk
+        description: Foreign key referencing the address.
+
+      - name: address_type_fk
+        description: Foreign key referencing the type of address.
+
+      - name: row_guid
+        description: Unique identifier for the row.
+
+      - name: modified_date
+        description: Date when the address information was last modified.
