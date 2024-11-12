@@ -39,6 +39,14 @@ sources:
               - unique
               - not_null
 
+      - name: addresstype
+        description: Table with addres data.
+        columns:
+          - name: addresstypeid
+            data_tests:
+              - unique
+              - not_null
+
       - name: stateprovince
         description: Table with state province data.
         columns:
