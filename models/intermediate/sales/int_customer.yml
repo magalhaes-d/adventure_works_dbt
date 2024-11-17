@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: int_customer
+    description: Table containing detailed customer information, including personal details and associated store.
+    columns:
+      - name: customer_pk
+        description: Primary key identifying the customer.
+        data_tests:
+          - unique
+          - not_null
+
+      - name: territory_fk
+        description: Foreign key referencing the customer's territory.
+
+      - name: person_type
+        description: Type classification of the person.
+
+      - name: name_style
+        description: Indicator for special name formatting.
+
+      - name: title
+        description: Title or prefix of the person.
+
+      - name: first_name
+        description: First name of the customer.
+
+      - name: middle_name
+        description: Middle name of the customer.
+
+      - name: last_name
+        description: Last name of the customer.
+
+      - name: suffix
+        description: Suffix of the person's name.
+
+      - name: email_promotion
+        description: Indicator for customer participation in email promotions.
+
+      - name: additional_contact_info
+        description: Additional contact information for the customer.
+
+      - name: demographics
+        description: Demographic details about the customer.
+
+      - name: store_name
+        description: Name of the store associated with the customer.
