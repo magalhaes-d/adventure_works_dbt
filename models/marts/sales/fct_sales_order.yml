@@ -1,0 +1,77 @@
+version: 2
+
+models:
+  - name: fct_sales_order
+    description: Table containing summarized information about sales orders, including customer, salesperson, and billing details.
+    columns:
+      - name: sales_order_pk
+        description: Primary key for the sales order.
+        data_tests:
+          - unique
+          - not_null
+
+      - name: customer_fk
+        description: Foreign key referencing the customer associated with the order.
+
+      - name: salesperson_fk
+        description: Foreign key referencing the salesperson responsible for the order.
+
+      - name: territory_fk
+        description: Foreign key referencing the territory where the order was placed.
+
+      - name: bill_to_address_fk
+        description: Foreign key referencing the billing address.
+
+      - name: ship_to_address_fk
+        description: Foreign key referencing the shipping address.
+
+      - name: ship_method_fk
+        description: Foreign key referencing the shipping method used.
+
+      - name: currency_rate_fk
+        description: Foreign key referencing the currency rate applied to the order.
+
+      - name: revision_number
+        description: Number indicating the revision version of the order.
+
+      - name: order_date
+        description: Date the order was placed.
+
+      - name: due_date
+        description: Date by which the order is expected to be fulfilled.
+
+      - name: ship_date
+        description: Date the order was shipped.
+
+      - name: order_status
+        description: Status of the order.
+
+      - name: online_order_flag
+        description: Flag indicating if the order was placed online.
+
+      - name: purchase_order_number
+        description: Purchase order number for tracking purposes.
+
+      - name: account_number
+        description: Account number associated with the order.
+
+      - name: credit_card_approval_code
+        description: Approval code for the credit card transaction.
+
+      - name: subtotal
+        description: Subtotal amount of the order before taxes and freight.
+
+      - name: tax_amount
+        description: Tax amount applied to the order.
+
+      - name: freight
+        description: Freight cost for shipping the order.
+
+      - name: total_due
+        description: Total amount due for the order, including taxes and freight.
+
+      - name: comment
+        description: Additional comments related to the order.
+
+      - name: card_type
+        description: Type of credit card used for the transaction.
