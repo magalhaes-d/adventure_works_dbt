@@ -1,0 +1,80 @@
+version: 2
+
+models:
+  - name: dim_product
+    description: Table with detailed product information.
+    columns:
+      - name: product_pk
+        description: Unique identifier for the product.
+
+      - name: size_unit_measure_fk
+        description: Foreign key referencing the size unit measure.
+
+      - name: weight_unit_measure_fk
+        description: Foreign key referencing the weight unit measure.
+
+      - name: product_subcategory_fk
+        description: Foreign key referencing the product subcategory.
+
+      - name: product_model_fk
+        description: Foreign key referencing the product model.
+
+      - name: product_name
+        description: Name of the product.
+
+      - name: product_number
+        description: Unique product number.
+
+      - name: make_flag
+        description: Indicates whether the product is manufactured internally.
+
+      - name: finished_goods_flag
+        description: Indicates whether the product is a finished good.
+
+      - name: product_color
+        description: Color of the product.
+
+      - name: safety_stock_level
+        description: Minimum quantity required in stock before reordering.
+
+      - name: reorder_point
+        description: Stock level at which the product should be reordered.
+
+      - name: standard_cost
+        description: Standard cost of the product.
+
+      - name: list_price
+        description: List price of the product.
+
+      - name: product_size
+        description: Size of the product.
+
+      - name: product_weight
+        description: Weight of the product.
+
+      - name: days_to_manufacture
+        description: Number of days required to manufacture the product.
+
+      - name: product_line
+        description: Product line to which the product belongs.
+
+      - name: product_class
+        description: Class of the product.
+
+      - name: product_style
+        description: Style of the product.
+
+      - name: sell_start_date
+        description: Date when the product became available for sale.
+
+      - name: sell_end_date
+        description: Date when the product was no longer available for sale.
+
+      - name: discontinued_date
+        description: Date when the product was discontinued.
+
+      - name: row_guid
+        description: Unique identifier for the row.
+
+      - name: modified_date
+        description: Date when the product information was last modified.

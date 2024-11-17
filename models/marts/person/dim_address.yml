@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: dim_address
+    description: Table with detailed information linking business entities to their addresses.
+    columns:
+      - name: address_pk
+        description: Unique identifier for the address.
+        data_tests:
+          - unique
+          - not_null
+
+      - name: business_entity_fk
+        description: Foreign key referencing the business entity associated with the address.
+
+      - name: address_type_name
+        description: Name of the type of address.
+
+      - name: address_line_1
+        description: Primary address line.
+
+      - name: address_line_2
+        description: Secondary address line, if available.
+
+      - name: city
+        description: City where the address is located.
+
+      - name: spatial_location
+        description: Spatial data representing the location of the address.
+
+      - name: state_province_code
+        description: Code representing the state or province.
+
+      - name: state_province_name
+        description: Name of the state or province.
+
+      - name: country_region_code
+        description: Code representing the country or region.
+
+      - name: country_name
+        description: Name of the country or region.

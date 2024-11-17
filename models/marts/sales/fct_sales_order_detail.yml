@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: fct_sales_order_detail
+    description: Table with detailed information about sales orders and related products.
+    columns:
+      - name: sales_order_detail_pk
+        description: Unique identifier for the sales order detail.
+        data_tests:
+          - unique
+          - not_null
+          
+      - name: sales_order_fk
+        description: Foreign key referencing the sales order.
+
+      - name: product_fk
+        description: Foreign key referencing the product included in the order.
+
+      - name: carrier_tracking_number
+        description: Tracking number provided by the carrier for the order shipment.
+
+      - name: order_quantity
+        description: Quantity of the product ordered.
+
+      - name: unit_price
+        description: Price per unit of the product.
+
+      - name: unit_price_discount
+        description: Discount applied to the unit price.
+
+      - name: discount_type
+        description: Type of discount applied to the order.
+
+      - name: discount_description
+        description: Description of the discount applied.
