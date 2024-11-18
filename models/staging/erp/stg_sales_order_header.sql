@@ -11,9 +11,9 @@ with
             , creditcardid as credit_card_fk
             , currencyrateid as currency_rate_fk
             , revisionnumber as revision_number
-            , orderdate as order_date
-            , duedate as due_date
-            , shipdate as ship_date
+            , cast(orderdate as date) as order_date
+            , cast(duedate as date) as due_date
+            , cast(shipdate as date) as ship_date
             , status as order_status
             , onlineorderflag as online_order_flag
             , purchaseordernumber as purchase_order_number
