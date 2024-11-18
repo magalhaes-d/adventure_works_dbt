@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: fct_sales_reason
+  - name: dim_sales_reason
     description: Table containing reasons associated with each sales order, detailing the reason name and type.
     columns:
       - name: sales_order_fk
