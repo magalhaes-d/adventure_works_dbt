@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: fct_sales_order_detail
+  - name: dim_sales_order_detail
     description: Table with detailed information about sales orders and related products.
     columns:
       - name: sales_order_detail_pk
