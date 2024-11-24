@@ -4,19 +4,25 @@ models:
   - name: dim_product
     description: Table with detailed product information.
     columns:
-      - name: product_pk
+      - name: product_sk
+        description: The surrogate key for this table.
+        data_tests:
+          - unique
+          - not_null
+
+      - name: product_id
         description: Unique identifier for the product.
 
-      - name: size_unit_measure_fk
+      - name: size_unit_measure_id
         description: Foreign key referencing the size unit measure.
 
-      - name: weight_unit_measure_fk
+      - name: weight_unit_measure_id
         description: Foreign key referencing the weight unit measure.
 
-      - name: product_subcategory_fk
+      - name: product_subcategory_id
         description: Foreign key referencing the product subcategory.
 
-      - name: product_model_fk
+      - name: product_model_id
         description: Foreign key referencing the product model.
 
       - name: product_name

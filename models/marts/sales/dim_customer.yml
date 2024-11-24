@@ -4,13 +4,19 @@ models:
   - name: dim_customer
     description: Table containing detailed customer information, including personal details and associated store.
     columns:
-      - name: customer_pk
-        description: Primary key identifying the customer.
+      - name: customer_sk
+        description: The surrogate key for this table.
         data_tests:
           - unique
           - not_null
 
-      - name: territory_fk
+      - name: customer_id
+        description: Unique identifier for the address.
+
+      - name: person_id
+        description: Foreign key referencing the person's data.
+      
+      - name: territory_id
         description: Foreign key referencing the customer's territory.
 
       - name: person_type

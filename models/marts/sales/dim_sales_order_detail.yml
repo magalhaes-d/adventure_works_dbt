@@ -4,14 +4,14 @@ models:
   - name: dim_sales_order_detail
     description: Table with detailed information about sales orders and related products.
     columns:
-      - name: sales_order_detail_pk
-        description: Unique identifier for the sales order detail.
+      - name: sales_order_detail_sk
+        description: The surrogate key for this table.
         data_tests:
           - unique
           - not_null
-          
-      - name: sales_order_fk
-        description: Foreign key referencing the sales order.
+
+      - name: sales_order_id
+        description: Unique identifier for the address.
 
       - name: product_fk
         description: Foreign key referencing the product included in the order.

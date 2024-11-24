@@ -4,31 +4,34 @@ models:
   - name: fct_sales_order
     description: Table containing summarized information about sales orders, including customer, salesperson, and billing details.
     columns:
-      - name: sales_order_pk
+      - name: sales_order_sk
         description: Primary key for the sales order.
         data_tests:
           - unique
           - not_null
 
+      - name: sales_order_id
+        description: Unique identifier for the address.
+
       - name: customer_fk
         description: Foreign key referencing the customer associated with the order.
 
-      - name: salesperson_fk
+      - name: salesperson_id
         description: Foreign key referencing the salesperson responsible for the order.
 
-      - name: territory_fk
+      - name: territory_id
         description: Foreign key referencing the territory where the order was placed.
 
-      - name: bill_to_address_fk
+      - name: bill_to_address_id
         description: Foreign key referencing the billing address.
 
-      - name: ship_to_address_fk
+      - name: ship_to_address_id
         description: Foreign key referencing the shipping address.
 
-      - name: ship_method_fk
+      - name: ship_method_id
         description: Foreign key referencing the shipping method used.
 
-      - name: currency_rate_fk
+      - name: currency_rate_id
         description: Foreign key referencing the currency rate applied to the order.
 
       - name: revision_number
