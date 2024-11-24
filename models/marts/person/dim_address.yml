@@ -4,13 +4,16 @@ models:
   - name: dim_address
     description: Table with detailed information linking business entities to their addresses.
     columns:
-      - name: address_pk
-        description: Unique identifier for the address.
+      - name: address_sk
+        description: The surrogate key for this table.
         data_tests:
           - unique
           - not_null
 
-      - name: business_entity_fk
+      - name: address_id
+        description: Unique identifier for the address.
+
+      - name: customer_fk
         description: Foreign key referencing the business entity associated with the address.
 
       - name: address_type_name

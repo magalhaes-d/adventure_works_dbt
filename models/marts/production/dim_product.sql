@@ -1,11 +1,18 @@
 with
     dimension as (
         select
-            product_pk
-            , size_unit_measure_fk
-            , weight_unit_measure_fk
-            , product_subcategory_fk
-            , product_model_fk
+            {{
+                dbt_utils.generate_surrogate_key([
+                    'product_pk'
+                    , 'product_model_fk'
+                    , 'product_name'
+                ])
+            }} as product_sk
+            , product_pk as product_id
+            , size_unit_measure_fk as size_unit_measure_id
+            , weight_unit_measure_fk as weight_unit_measure_id
+            , product_subcategory_fk as product_subcategory_id
+            , product_model_fk as product_model_id
             , product_name
             , product_number
             , make_flag
