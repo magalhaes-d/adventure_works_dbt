@@ -45,6 +45,7 @@ with
             , sales_order_header_tb.total_due
             , sales_order_header_tb.comment
             , sales_order_header_tb.card_type
+            , current_timestamp() as updated_at
         from sales_order_header_tb
         left join customer_tb
             on sales_order_header_tb.customer_fk = customer_tb.customer_id
