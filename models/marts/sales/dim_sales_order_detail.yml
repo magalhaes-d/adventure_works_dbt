@@ -10,11 +10,14 @@ models:
           - unique
           - not_null
 
-      - name: sales_order_id
-        description: Unique identifier for the address.
+      - name: sales_order_fk
+        description: Foreign key referencing the sales order.
 
       - name: product_fk
         description: Foreign key referencing the product included in the order.
+
+      - name: sales_order_id
+        description: Unique identifier for the address.
 
       - name: carrier_tracking_number
         description: Tracking number provided by the carrier for the order shipment.
