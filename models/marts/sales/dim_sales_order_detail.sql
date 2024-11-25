@@ -11,18 +11,25 @@ with
         from {{ ref('dim_product') }}
     )
 
+    , sales_order_tb as (
+        select
+            sales_order_sk
+            , sales_order_id
+        from {{ ref('fct_sales_order') }}
+    )
+
     , fact as (
         select
             {{
                 dbt_utils.generate_surrogate_key([
                     'sales_order_detail_tb.sales_order_fk'
+                    , 'sales_order_tb.sales_order_sk'
                     , 'product_tb.product_sk'
-                    , 'sales_order_detail_tb.order_quantity'
-                    , 'sales_order_detail_tb.unit_price'
                 ])
             }} as sales_order_detail_sk
-            , sales_order_detail_tb.sales_order_fk as sales_order_id
+            , sales_order_tb.sales_order_sk as sales_order_fk
             , product_tb.product_sk as product_fk
+            , sales_order_detail_tb.sales_order_fk as sales_order_id
             , sales_order_detail_tb.carrier_tracking_number
             , sales_order_detail_tb.order_quantity
             , sales_order_detail_tb.unit_price
@@ -32,6 +39,8 @@ with
         from sales_order_detail_tb
         left join product_tb
             on sales_order_detail_tb.product_fk = product_tb.product_id
+        left join sales_order_tb
+            on sales_order_detail_tb.sales_order_fk = sales_order_tb.sales_order_id
     )
 
 select *

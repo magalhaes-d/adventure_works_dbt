@@ -4,7 +4,7 @@ models:
   - name: int_sales_reason
     description: Table containing reasons associated with each sales order, detailing the reason name and type.
     columns:
-      - name: sales_order_fk
+      - name: sales_order_id
         description: Foreign key referencing the sales order associated with the reason.
         data_tests:
           - not_null
