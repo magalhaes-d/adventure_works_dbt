@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: bdg_sales_order_detail_reason
+    description: Table linking customers, sales orders, and associated reasons for sales.
+    columns:
+      - name: customer_fk
+        description: Foreign key referencing the customer.
+
+      - name: sales_order_fk
+        description: Foreign key referencing the sales order.
+
+      - name: sales_order_detail_fk
+        description: Foreign key referencing the sales order detail.
+
+      - name: product_fk
+        description: Foreign key referencing the product.
+
+      - name: sales_reason_fk
+        description: Foreign key referencing the sales reason.

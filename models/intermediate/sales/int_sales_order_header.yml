@@ -58,8 +58,14 @@ models:
       - name: credit_card_approval_code
         description: Approval code for the credit card transaction.
 
-      - name: subtotal
+      - name: subtotal_from_fct
         description: Subtotal amount of the order before taxes and freight.
+
+      - name: subtotal_from_dim
+        description: Subtotal amount of the order before taxes and freight (BASED ON SALES_ORDER_DETAIL TABLE).
+
+      - name: discounted_subtotal_from_dim
+        description: Discounted subtotal amount of the order before taxes and freight (BASED ON SALES_ORDER_DETAIL TABLE).
 
       - name: tax_amount
         description: Tax amount applied to the order.
