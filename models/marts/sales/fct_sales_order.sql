@@ -19,7 +19,7 @@ with
                     , 'customer_tb.customer_sk'
                     , 'sales_order_header_tb.ship_to_address_fk'
                     , 'sales_order_header_tb.order_date'
-                    , 'sales_order_header_tb.subtotal'
+                    , 'sales_order_header_tb.subtotal_from_fct'
                 ])
             }} as sales_order_sk
             , sales_order_header_tb.sales_order_pk as sales_order_id
@@ -39,7 +39,8 @@ with
             , sales_order_header_tb.purchase_order_number
             , sales_order_header_tb.account_number
             , sales_order_header_tb.credit_card_approval_code
-            , sales_order_header_tb.subtotal
+            , sales_order_header_tb.subtotal_from_dim as subtotal
+            , sales_order_header_tb.discounted_subtotal_from_dim as discounted_subtotal
             , sales_order_header_tb.tax_amount
             , sales_order_header_tb.freight
             , sales_order_header_tb.total_due

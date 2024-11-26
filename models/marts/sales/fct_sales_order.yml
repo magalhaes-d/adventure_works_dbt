@@ -64,6 +64,9 @@ models:
       - name: subtotal
         description: Subtotal amount of the order before taxes and freight.
 
+      - name: discounted_subtotal
+        description: Discounted subtotal amount of the order before taxes and freight.
+
       - name: tax_amount
         description: Tax amount applied to the order.
 
