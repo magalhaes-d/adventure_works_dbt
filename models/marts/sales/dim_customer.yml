@@ -37,6 +37,9 @@ models:
       - name: last_name
         description: Last name of the customer.
 
+      - name: entity_name
+        description: Full name if it is an individual or store name if it is a reseller store.
+
       - name: suffix
         description: Suffix of the person's name.
 
@@ -48,6 +51,3 @@ models:
 
       - name: demographics
         description: Demographic details about the customer.
-
-      - name: store_name
-        description: Name of the store associated with the customer.

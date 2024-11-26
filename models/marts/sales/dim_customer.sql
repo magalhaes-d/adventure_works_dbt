@@ -18,11 +18,15 @@ with
             , first_name
             , middle_name
             , last_name
+            , case
+                when person_type in ('IN', 'SC')
+                then first_name || ' ' || last_name
+                else store_name
+            end as entity_name
             , suffix
             , email_promotion
             , additional_contact_info
             , demographics
-            , store_name
         from {{ ref('int_customer') }}
     )
 
