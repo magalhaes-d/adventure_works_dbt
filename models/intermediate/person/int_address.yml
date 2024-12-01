@@ -10,12 +10,6 @@ models:
           - unique
           - not_null
 
-      - name: business_entity_fk
-        description: Foreign key referencing the business entity associated with the address.
-
-      - name: address_type_name
-        description: Name of the type of address.
-
       - name: address_line_1
         description: Primary address line.
 

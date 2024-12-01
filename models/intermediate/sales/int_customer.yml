@@ -10,38 +10,14 @@ models:
           - unique
           - not_null
 
+      - name: business_entity_fk
+        description: Foreign key referencing the business entity associated with the store.
+
       - name: territory_fk
         description: Foreign key referencing the customer's territory.
 
-      - name: person_type
-        description: Type classification of the person.
+      - name: customer_name
+        description: Customer's name
 
-      - name: name_style
-        description: Indicator for special name formatting.
-
-      - name: title
-        description: Title or prefix of the person.
-
-      - name: first_name
-        description: First name of the customer.
-
-      - name: middle_name
-        description: Middle name of the customer.
-
-      - name: last_name
-        description: Last name of the customer.
-
-      - name: suffix
-        description: Suffix of the person's name.
-
-      - name: email_promotion
-        description: Indicator for customer participation in email promotions.
-
-      - name: additional_contact_info
-        description: Additional contact information for the customer.
-
-      - name: demographics
-        description: Demographic details about the customer.
-
-      - name: store_name
-        description: Name of the store associated with the customer.
+      - name: customer_type
+        description: Type classification of the customer.

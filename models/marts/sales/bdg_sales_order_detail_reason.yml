@@ -4,11 +4,17 @@ models:
   - name: bdg_sales_order_detail_reason
     description: Table linking customers, sales orders, and associated reasons for sales.
     columns:
+      - name: sales_order_fk
+        description: Foreign key referencing the sales order.
+
       - name: customer_fk
         description: Foreign key referencing the customer.
 
-      - name: sales_order_fk
-        description: Foreign key referencing the sales order.
+      - name: ship_address_fk
+        description: Foreign key referencing the shipping address.
+
+      - name: address_fk
+        description: Foreign key referencing the customer address.
 
       - name: sales_order_detail_fk
         description: Foreign key referencing the sales order detail.

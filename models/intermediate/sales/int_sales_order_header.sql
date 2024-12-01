@@ -34,27 +34,6 @@ with
         from {{ ref('stg_credit_card') }}
     )
 
-    , sales_detail as (
-        select
-            sales_order_detail_pk
-            , sales_order_fk
-            , order_quantity
-            , unit_price
-            , unit_price_discount
-            , round(order_quantity * unit_price, 2) as gross_total
-            , (round(order_quantity * unit_price, 2)) * (1 - unit_price_discount) as net_total
-        from {{ ref('stg_sales_order_detail') }}
-    )
-
-    , subtotal_sales_detail as (
-        select
-            sales_order_fk
-            , sum(gross_total) as gross_total
-            , sum(net_total) as net_total
-        from sales_detail
-        group by sales_order_fk
-    )
-
     , joining as (
         select
             sales_order_header.sales_order_pk
@@ -74,9 +53,7 @@ with
             , sales_order_header.purchase_order_number
             , sales_order_header.account_number
             , sales_order_header.credit_card_approval_code
-            , sales_order_header.subtotal as subtotal_from_fct
-            , subtotal_sales_detail.gross_total as subtotal_from_dim
-            , subtotal_sales_detail.net_total as discounted_subtotal_from_dim
+            , sales_order_header.subtotal
             , sales_order_header.tax_amount
             , sales_order_header.freight
             , sales_order_header.total_due
@@ -85,8 +62,6 @@ with
         from sales_order_header
         left join credit_card
             on sales_order_header.credit_card_fk = credit_card.credit_card_pk
-        left join subtotal_sales_detail
-            on sales_order_header.sales_order_pk = subtotal_sales_detail.sales_order_fk
     )
 
 select *

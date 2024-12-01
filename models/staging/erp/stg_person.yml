@@ -4,8 +4,8 @@ models:
   - name: stg_person
     description: Table with detailed information about persons.
     columns:
-      - name: business_entity_pk
-        description: Unique identifier for the business entity.
+      - name: business_entity_fk
+        description: Foreign key referencing the business entity.
 
       - name: person_type
         description: Type classification of the person.

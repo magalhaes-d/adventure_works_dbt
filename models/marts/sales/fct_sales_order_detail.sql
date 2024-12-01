@@ -1,6 +1,15 @@
 with
     sales_order_detail_tb as (
-        select *
+        select
+            sales_order_detail_pk
+            , sales_order_fk
+            , product_fk
+            , carrier_tracking_number
+            , order_quantity
+            , unit_price
+            , unit_price_discount
+            , discount_type
+            , discount_description
         from {{ ref('int_sales_order_detail') }}
     )
 
@@ -22,9 +31,11 @@ with
         select
             {{
                 dbt_utils.generate_surrogate_key([
-                    'sales_order_detail_tb.sales_order_fk'
-                    , 'sales_order_tb.sales_order_sk'
+                    'sales_order_tb.sales_order_sk'
                     , 'product_tb.product_sk'
+                    , 'sales_order_detail_tb.sales_order_fk'
+                    , 'sales_order_detail_tb.order_quantity'
+                    , 'sales_order_detail_tb.unit_price'
                 ])
             }} as sales_order_detail_sk
             , sales_order_tb.sales_order_sk as sales_order_fk

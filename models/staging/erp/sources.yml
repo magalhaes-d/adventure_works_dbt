@@ -133,3 +133,10 @@ sources:
             data_tests:
               - unique
               - not_null
+
+      - name: businessentitycontact
+        description: Table with business contact.
+        columns:
+          - name: businessentityid
+            data_tests:
+              - not_null
