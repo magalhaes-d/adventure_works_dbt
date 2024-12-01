@@ -1,7 +1,7 @@
 with
     stg_tb as (
         select
-            businessentityid as business_entity_pk
+            businessentityid as business_entity_fk
             , persontype as person_type
             , namestyle as name_style
             , title as title

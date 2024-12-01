@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: fct_entity_address
+    description: Table containing address details associated with entities and customers.
+    columns:
+      - name: entity_address_sk
+        description: Surrogate key uniquely identifying the entity-address relationship.
+
+      - name: customer_fk
+        description: Foreign key referencing the customer associated with the address.
+
+      - name: business_entity_fk
+        description: Foreign key referencing the business entity associated with the address.
+
+      - name: address_fk
+        description: Foreign key referencing the address.
+
+      - name: address_id
+        description: Identifier for the specific address.

@@ -8,22 +8,6 @@ with
         from {{ ref('stg_customer') }}
     )
 
-    , person as (
-        select
-            business_entity_pk
-            , person_type
-            , name_style
-            , title
-            , first_name
-            , middle_name
-            , last_name
-            , suffix
-            , email_promotion
-            , additional_contact_info
-            , demographics
-        from {{ ref('stg_person') }}
-    )
-
     , store as (
         select
             business_entity_fk
@@ -31,27 +15,37 @@ with
         from {{ ref('stg_store') }}
     )
 
+    , person as (
+        select
+            business_entity_fk
+            , first_name
+            , last_name
+        from {{ ref('stg_person') }}
+    )
+
     , joinings as (
         select
             customer.customer_pk
-            , customer.person_fk
+            , case
+                when store.business_entity_fk is not null
+                then store.business_entity_fk
+                else customer.person_fk
+            end as business_entity_fk
             , customer.territory_fk
-            , person.person_type
-            , person.name_style
-            , person.title
-            , person.first_name
-            , person.middle_name
-            , person.last_name
-            , person.suffix
-            , person.email_promotion
-            , person.additional_contact_info
-            , person.demographics
-            , store.store_name
+            , case
+                when store.business_entity_fk is not null
+                then store.store_name
+                else person.first_name || ' ' || person.last_name
+            end as customer_name, case
+                when store.business_entity_fk is not null
+                then 'Store'
+                else 'Person'
+            end as customer_type
         from customer
-        left join person
-            on customer.person_fk = person.business_entity_pk
         left join store
             on customer.store_fk = store.business_entity_fk
+        left join person
+            on customer.person_fk = person.business_entity_fk
     )
 
 select *

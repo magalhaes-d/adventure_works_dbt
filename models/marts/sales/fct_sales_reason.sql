@@ -1,6 +1,9 @@
 with
     sales_reason_tb as (
-        select *
+        select
+            sales_order_id
+            , reason_name
+            , reason_type
         from {{ ref('int_sales_reason') }}
     )
 
