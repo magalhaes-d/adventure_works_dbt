@@ -16,6 +16,9 @@ models:
       - name: address_fk
         description: Foreign key referencing the customer address.
 
+      - name: entity_address_fk
+        description: Foreign key referencing the customer to the address.
+
       - name: sales_order_detail_fk
         description: Foreign key referencing the sales order detail.
 
