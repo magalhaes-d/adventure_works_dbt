@@ -4,18 +4,18 @@ with
         from {{ ref('fct_sales_order') }}
     )
 
-    , dim_sales as (
+    , fct_sales_detail as (
         select *
         from {{ ref('fct_sales_order_detail') }}
     )
 
     , joining as (
         select
-            dim_sales.order_quantity
-            , dim_sales.unit_price
+            fct_sales_detail.order_quantity
+            , fct_sales_detail.unit_price
         from fct_sales
-        left join dim_sales
-            on fct_sales.sales_order_pk = dim_sales.sales_order_fk
+        left join fct_sales_detail
+            on fct_sales.sales_order_sk = fct_sales_detail.sales_order_fk
         where fct_sales.order_date between '2011-01-01' and '2011-12-31'
     )
 
