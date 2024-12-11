@@ -18,6 +18,7 @@ with
             , purchase_order_number
             , account_number
             , credit_card_approval_code
+            , gross_total
             , subtotal
             , tax_amount
             , freight
@@ -62,6 +63,7 @@ with
             , sales_order_header_tb.purchase_order_number
             , sales_order_header_tb.account_number
             , sales_order_header_tb.credit_card_approval_code
+            , sales_order_header_tb.gross_total
             , sales_order_header_tb.subtotal
             , sales_order_header_tb.tax_amount
             , sales_order_header_tb.freight
